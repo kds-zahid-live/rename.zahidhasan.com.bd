@@ -39,7 +39,7 @@ export default function Home() {
     const filenameKeyword = `Rename_${lines[0].trim().replace(/[^a-zA-Z0-9]/g, "_")}_rename.zahidhasan.com.bd.cmd`
 
     // Add the ASCII art and code as comments at the beginning
-    const commentHeader = `REM ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠒⠋⠉⠉⠉⠉⠉⠙⠒⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    const commentFooter = `REM ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠴⠒⠋⠉⠉⠉⠉⠉⠙⠒⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 REM ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠊⠁⠀⠀⠀⣀⣀⣠⠤⠤⠤⠤⠤⣄⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 REM ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡥⠴⠒⠊⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 REM ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀⡀⠀⠀⠀⠀⠀⠀⢀⣠⣶⣿⣷⣤⣀⠈⡆⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -68,7 +68,8 @@ REM || ' /| | | \\___ \\    / // _\` | '_ \\| |/ _\` ||
 REM || . \\| |_| |___) |  / /| (_| | | | | | (_| ||
 REM ||_|\\_\\____/|____/  /____\\__,_|_| |_|_|\\__,_||
 REM +--------------------------------------------+
-REM 
+REM `
+    const commentHeader = `
 REM phys_addr_t acpi_pci_root_get_mcfg_addr(acpi_handle handle)
 REM {
 REM 	acpi_status status = AE_NOT_EXIST;
@@ -150,7 +151,7 @@ REM }`
     })
 
     // Join the output into a string
-    const fileContent = commentHeader + "\n" + output.join("\n") + "\n"+ commentHeader
+    const fileContent = commentHeader + "\n" + output.join("\n") + "\n"+ commentHeader + "\n"+ commentFooter
 
     // Create a blob and download it
     const blob = new Blob([fileContent], { type: "text/plain" })
