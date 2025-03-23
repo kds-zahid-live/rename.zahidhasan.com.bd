@@ -69,8 +69,7 @@ REM || . \\| |_| |___) |  / /| (_| | | | | | (_| ||
 REM ||_|\\_\\____/|____/  /____\\__,_|_| |_|_|\\__,_||
 REM +--------------------------------------------+
 REM `
-    const commentHeader = `
-REM phys_addr_t acpi_pci_root_get_mcfg_addr(acpi_handle handle)
+    const commentHeader = `REM phys_addr_t acpi_pci_root_get_mcfg_addr(acpi_handle handle)
 REM {
 REM 	acpi_status status = AE_NOT_EXIST;
 REM 	unsigned long long mcfg_addr;
